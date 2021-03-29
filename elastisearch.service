@@ -1,0 +1,16 @@
+[Unit]
+Description=Elasticsearch Server
+After=network.target
+[Service]
+Type=simple
+User=es
+Group=es
+LimitNOFILE=65535
+LimitNPROC=65535
+LimitMEMLOCK=infinity
+ExecStart=/usr/local/elasticsearch-7.4.2/bin/elasticsearch
+KillMode=mixed
+Restart=on-failure
+RestartSec=42s
+[Install]
+WantedBy=multi-user.target

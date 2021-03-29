@@ -1,0 +1,43 @@
+一、配置文件位置
+
+Systemd默认从目录/etc/systemd/system/读取配置文件。但是里面存放的大部分文件都是符号链接，
+指向目录/usr/lib/systemd/system/，真正的配置文件存放在那个目录。
+
+
+
+二、常用命令
+
+
+# 列出所有正在运行的、类型为service的Unit
+systemctl list-units --type=service|grep elasticsearch
+
+# 立即启动一个服务
+sudo systemctl start apache.service
+
+# 立即停止一个服务
+sudo systemctl stop apache.service
+
+# 重启一个服务
+sudo systemctl restart apache.service
+
+# 重新加载一个服务的配置文件
+sudo systemctl reload apache.service
+
+# 重载所有修改过的配置文件
+sudo systemctl daemon-reload
+
+
+三、查看Unit启动日志
+
+Systemd统一管理了所有Unit的启动日志，因此只需要使用journalctl命令就可以查看到服务的日志
+
+journalctl -u  mysql.service  -fn 10
+
+
+
+四、参考文档
+
+[Centos7之Systemd(Service文件)详解]
+https://blog.csdn.net/Mr_Yang__/article/details/84133783 
+[关于systemd中的 $MAINPID]
+https://blog.csdn.net/michaelwoshi/article/details/104078664

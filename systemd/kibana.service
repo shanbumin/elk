@@ -1,0 +1,13 @@
+[Unit]
+Description=Kibana Server
+After=elasticsearch.service
+[Service]
+Type=simple
+User=es
+Group=es
+ExecStart=/usr/local/kibana-7.4.2-linux-x86_64/bin/kibana
+KillMode=mixed
+Restart=on-failure
+RestartSec=42s
+[Install]
+WantedBy=multi-user.target

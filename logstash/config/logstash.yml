@@ -1,0 +1,85 @@
+
+# ------------ Pipeline Settings --------------
+#1.管道标识符,main标识，我们称为主管道
+# pipeline.id: main
+
+# 2.并行处理过滤器插件和输出插件的线程数量，默认是CPU核心数
+# pipeline.workers: 2
+
+# 3.每个工作线程每一批处理事件的数量
+# pipeline.batch.size: 125
+
+# 4.工作线程处理事件不足时的超时时间
+# pipeline.batch.delay: 50
+
+# 5.如果还有未处理完的事件，是否立即退出
+# pipeline.unsafe_shutdown: false
+
+# ------------ Pipeline Configuration Settings --------------
+#
+# 1.主管道的配置文件路径
+# path.config:
+#
+# 2.主管道的配置字符串,与path.config互斥额
+# config.string:
+
+# 3.检查配置文件后退出
+# config.test_and_exit: false
+
+#4.自动加载配置文件的变化
+# config.reload.automatic: false
+
+#5.扫描配置文件变化的时间间隔
+# config.reload.interval: 3s
+#
+# Show fully compiled configuration as debug log message
+# NOTE: --log.level must be 'debug'
+#
+# config.debug: false
+#
+# When enabled, process escaped characters such as \n and \" in strings in the
+# pipeline configuration files.
+#
+# config.support_escapes: false
+#
+
+
+
+# ------------ Queuing Settings --------------
+#1.队列类型
+queue.type: persisted
+#2.持久化队列文件存储路径
+# path.queue:
+
+#3.持久化队列存储空间大小,默认1G
+# queue.max_bytes: 1024mb
+
+#4.持久化队列事件数量上限，默认事件数量没有上限
+# queue.max_events: 0
+
+#5.持久化队列页文件的容量上限
+# queue.page_capacity: 64mb
+
+#6.同步检查点文件前已写入事件数量上限,0代表无上限。
+# queue.checkpoint.writes: 1024
+
+#7.同步检查点文件前已确认事件数量上限,0代表无上限
+# queue.checkpoint.acks: 1024
+
+#8.???
+# queue.checkpoint.interval: 1000
+
+
+# ------------ Dead-Letter Queue Settings --------------
+#1.开启死信队列
+dead_letter_queue.enable: true
+
+#2.死信队列容量上限
+# dead_letter_queue.max_bytes: 1024mb
+
+#3.死信队列存储路径，默认是path.data/dead_letter_queue
+# path.dead_letter_queue:
+
+
+
+

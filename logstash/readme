@@ -1,0 +1,2 @@
+/usr/local/logstash-7.4.2/bin/logstash   -e    "input { stdin {} }  output  { stdout{} }"
+/usr/local/logstash-7.4.2/bin/logstash   -f /usr/local/logstash-7.4.2/config/conf.d/t01.conf

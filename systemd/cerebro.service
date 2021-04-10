@@ -1,0 +1,11 @@
+[Unit]
+Description=Cerebro Server
+After=elasticsearch.service
+[Service]
+Type=simple
+ExecStart=/usr/local/cerebro-0.9.3/bin/cerebro 
+KillMode=mixed
+Restart=on-failure
+RestartSec=42s
+[Install]
+WantedBy=multi-user.target

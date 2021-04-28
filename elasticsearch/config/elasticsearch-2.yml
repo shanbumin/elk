@@ -1,6 +1,6 @@
-tee /etc/systemd/system/cerebro.service << 'EOF'
+tee /usr/local/elasticsearch-7.4.2/config/elasticsearch.yml << 'EOF'
 cluster.name: tcly
-node.name: es1
+node.name: es2
 network.host: 0.0.0.0
 path.data: /var/lib/elasticsearch
 path.logs: /var/log/elasticsearch
